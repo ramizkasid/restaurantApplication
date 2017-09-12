@@ -1,0 +1,17 @@
+<div class="panel-body">
+  <p><a href="#/home">Go to Home</a></p>
+</div>
+<div class="panel panel-default" ng-init="details()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Restaurant App</h3>
+  </div>
+  <input type = "text" ng-model = "search" placeholder="search by Price"/>
+  <div class="panel-body">
+  <div class="row" ng-repeat = "name in names">
+    <h1>{{name.name}}</h1>
+    <ul class="list-group" ng-repeat = "subcat in subcategory | filter: search">
+    <li class="list-group-item">{{subcat.name}} - {{subcat.rate | currency : 'Rs '}}</li>
+  </ul>
+  </div>
+  </div>
+</div>
